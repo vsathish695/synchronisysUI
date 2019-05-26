@@ -1,0 +1,50 @@
+<div style="display: flex">
+  <div style="width: 22%"></div>
+  <mat-card style="width: 50%;margin-top: 5%">
+    <mat-card-header class="cardHeader">
+      <div>User Detail</div>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <div style="display: flex;">
+        <div>
+          <img [src]="user.avatar" style="margin-top: 18%;" />
+        </div>
+        <div class="childdiv">
+          <div>First Name : {{ user.first_name }}</div>
+          <br />
+          <div>Last Name : {{ user.last_name }}</div>
+          <br />
+          <div>Email Id : {{ user.email }}</div>
+          <br />
+          <div>
+            EDIT : 
+            <button
+              mat-icon-button
+              matTooltip="edit"
+              (click)="EditUser(user.id)"
+            >
+              <mat-icon style="color: blue">edit</mat-icon>
+            </button>
+            DELETE : 
+            <button
+              mat-icon-button
+              matTooltip="Delete"
+              (click)="openDialog(user.id)"
+            >
+            <mat-icon style="color: crimson">delete</mat-icon>
+          </button>
+          </div>
+        </div>
+      </div>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <div style="text-align: right;padding: 2%;">
+        <button mat-raised-button color="accent" (click)="GoBack()">
+          BACK
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

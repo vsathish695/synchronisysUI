@@ -1,0 +1,26 @@
+.mat-row {
+  cursor: pointer;
+}
+.mat-paginator-page-size {
+  display: none !important;
+}
+.mat-paginator-range-label:before {
+  content: "Joe's Task:";
+}
+td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+  border-bottom-style: solid;
+  border-bottom-width: 1px;
+  padding: 0;
+}
+mat-footer-row, mat-header-row, mat-row, td.mat-cell, td.mat-footer-cell, th.mat-header-cell {
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+}
+.mat-cell, .mat-footer-cell {
+  color: rgba(0, 0, 0, 0.87);
+}
+.mat-cell, .mat-footer-cell {
+  font-size: 14px;
+}
+.pad2{
+  padding: 2% !important;
+}

@@ -1,0 +1,49 @@
+<div style="display: flex">
+  <div style="width: 22%"></div>
+  <mat-card style="width: 50%;margin-top: 5%">
+    <mat-card-header class="cardHeader">
+      <div>Edit User</div>
+    </mat-card-header>
+    <mat-divider></mat-divider>
+    <mat-card-content>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="First Name"
+          autocomplete="off"
+          [(ngModel)]="user.first_name"
+          (input)="keypress($event,'name',20)"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Last Name"
+          autocomplete="off"
+          [(ngModel)]="user.last_name"
+          (input)="keypress($event,'name',20)"
+        />
+      </mat-form-field>
+      <mat-form-field>
+        <input
+          matInput
+          placeholder="Email"
+          autocomplete="off"
+          [(ngModel)]="user.email"
+          (input)="keypress($event,'email',20)"
+        />
+      </mat-form-field>
+    </mat-card-content>
+    <mat-divider></mat-divider>
+    <mat-card-actions>
+      <div style="text-align: right;padding: 2%;">
+        <button mat-raised-button color="accent" (click)="GoBack()">
+          CANCEL
+        </button>
+        <button mat-raised-button color="primary" (click)="UpdateUser()">
+          Update
+        </button>
+      </div>
+    </mat-card-actions>
+  </mat-card>
+</div>

@@ -1,0 +1,57 @@
+<mat-card>
+  <div style="text-align: right;">
+    <button mat-icon-button (click)="AddUser()">
+      <mat-icon style="color: red">person_add</mat-icon>
+    </button>
+  </div>
+ 
+
+  <table
+    class="mat-table"
+    matSort
+    (matSortChange)="sortData($event)"
+    style="width:100%"
+  >
+    <thead>
+      <tr class="mat-header-row">
+        <th class="mat-header-cell pad2">Image</th>
+        <th class="mat-header-cell pad2" mat-sort-header="first_name">First Name</th>
+        <th class="mat-header-cell pad2" mat-sort-header="last_name">Last Name</th>
+        <th class="mat-header-cell pad2" mat-sort-header="email">Email</th>
+        <th class="mat-header-cell pad2" style="text-align: left">Action</th>
+      </tr>
+    </thead>
+
+    <tr class="mat-row" *ngFor="let item of sortedData">
+      <td class="mat-cell"> 
+          <div style="padding: 3%">
+              <img [src]="item.avatar" style="width: 50px;" />
+            </div>
+      </td>
+      <td class="mat-cell">{{ item.first_name }}</td>
+      <td class="mat-cell">{{ item.last_name }}</td>
+
+      <td class="mat-cell">{{ item.email }}</td>
+      <td class="mat-cell">
+        <button mat-icon-button matTooltip="edit" (click)="EditUser(item.id)">
+          <mat-icon style="color: blue">edit</mat-icon>
+        </button>
+        <button
+          mat-icon-button
+          matTooltip="Delete"
+          (click)="openDialog(item.id)"
+        >
+          <mat-icon style="color: crimson">delete</mat-icon>
+        </button>
+      </td>
+    </tr>
+  </table>
+
+  <mat-paginator
+    [length]="objpaginator.total"
+    [pageIndex]="objpaginator.page"
+    [pageSize]="objpaginator.per_page"
+    (page)="pageEvent = getServerData($event)"
+    [showFirstLastButtons]="true"
+  ></mat-paginator>
+</mat-card>

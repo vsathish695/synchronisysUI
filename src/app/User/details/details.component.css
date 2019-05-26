@@ -1,0 +1,28 @@
+.cardHeader{
+    color: rgba(0,0,0,.54);
+    background: rgba(0,0,0,.03);
+}
+.cardHeader > div{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    padding: 8px 20px;
+    font-size: x-large;
+}
+.mat-card-header-text{
+    display: none !important;
+}
+.mat-card-content{
+    padding: 3%;
+}
+mat-form-field{
+    width: 100%;
+}
+.mat-card{
+    padding: 0% !important;
+}
+.childdiv{
+    padding: 4%;
+    font-size: 21px;
+    color: rgba(0,0,0,.54);
+}
